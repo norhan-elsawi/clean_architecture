@@ -27,4 +27,15 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply from: "./libraries.gradle"
+ext {
+    daggerVersion = "2.23.2"
+    retrofitVersion = '2.6.0'
+    okHttpVersion = "4.0.0"
+    rxJavaVersion = "2.2.10"
+    rxAndroidVersion = "2.1.1"
+    navigationComponentVersion = "2.1.0-alpha06"
+    alerterVersion = "4.0.2"
+    sdpVersion = "1.0.6"
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+}

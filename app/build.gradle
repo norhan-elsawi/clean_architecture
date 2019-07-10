@@ -35,30 +35,29 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    //    navigation
-    implementation rootProject.ext.libraries.navigationComponentFragment
-    implementation rootProject.ext.libraries.navigationComponentUI
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
 
-    //dagger
-    implementation rootProject.ext.libraries.dagger
-    implementation rootProject.ext.libraries.daggerAndroid
-    implementation rootProject.ext.libraries.daggerAndroidSupport
-    kapt rootProject.ext.apt.daggerCompiler
-    kapt rootProject.ext.apt.daggerProcessor
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
-    // retrofit
-    implementation rootProject.ext.libraries.retrofit
-    implementation rootProject.ext.libraries.retrofitGsonConverter
-    implementation rootProject.ext.libraries.retrofitLoggingInterceptor
-    implementation rootProject.ext.libraries.gson
-    implementation rootProject.ext.libraries.okhttp
-    implementation rootProject.ext.libraries.retrofitAdapter
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
-    //rx java
-    implementation rootProject.ext.libraries.rxjava
-    implementation rootProject.ext.libraries.rxandroid
+    implementation "androidx.navigation:navigation-fragment:$navigationComponentVersion"
+    implementation "androidx.navigation:navigation-ui:$navigationComponentVersion"
 
-    //other
-    implementation rootProject.ext.libraries.alerter
-    implementation rootProject.ext.libraries.sdp
+    implementation "com.tapadoo.android:alerter:${alerterVersion}"
+    implementation "com.intuit.sdp:sdp-android:${sdpVersion}"
+
+    kapt "com.google.dagger:dagger-compiler:${daggerVersion}"
+    kapt "com.google.dagger:dagger-android-processor:${daggerVersion}"
+
+    implementation project(':data')
+    implementation project(':domain')
 }
