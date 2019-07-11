@@ -1,4 +1,4 @@
-package com.norhan.cleanarchitecturedemo.entities
+package com.norhan.cleanarchitecturedemo.base
 
 /**
  * A generic wrapper class around data request
