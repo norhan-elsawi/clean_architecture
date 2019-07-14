@@ -1,6 +1,9 @@
 package com.norhan.cleanarchitecturedemo.di.modules
 
 import com.norhan.cleanarchitecturedemo.ui.main.MainActivity
+import com.norhan.cleanarchitecturedemo.utils.UiThread
+import com.norhan.domain.executor.PostExecutionThread
+import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,6 +13,11 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class UiModule {
 
+    @Binds
+    abstract fun bindPostExecutionThread(uiThread: UiThread): PostExecutionThread
+
     @ContributesAndroidInjector
     abstract fun contributeMainActivity(): MainActivity
+
+
 }
