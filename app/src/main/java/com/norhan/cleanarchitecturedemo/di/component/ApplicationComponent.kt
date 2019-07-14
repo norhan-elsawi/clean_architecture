@@ -3,7 +3,7 @@ package com.norhan.cleanarchitecturedemo.di.component
 import android.app.Application
 import com.norhan.cleanarchitecturedemo.application.ProjectApplication
 import com.norhan.cleanarchitecturedemo.di.modules.ApplicationModule
-import com.norhan.cleanarchitecturedemo.di.modules.DataModule
+import com.norhan.cleanarchitecturedemo.di.modules.data.RepositoryModule
 import com.norhan.cleanarchitecturedemo.di.modules.NetworkModule
 import com.norhan.cleanarchitecturedemo.di.modules.UiModule
 import com.norhan.cleanarchitecturedemo.di.modules.viewmodel.ViewModelModule
@@ -18,7 +18,7 @@ import javax.inject.Singleton
         ApplicationModule::class,
         NetworkModule::class,
         UiModule::class,
-        DataModule::class,
+        RepositoryModule::class,
         ViewModelModule::class]
 )
 interface ApplicationComponent {

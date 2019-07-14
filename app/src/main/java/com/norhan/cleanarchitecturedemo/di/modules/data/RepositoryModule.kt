@@ -1,4 +1,4 @@
-package com.norhan.cleanarchitecturedemo.di.modules
+package com.norhan.cleanarchitecturedemo.di.modules.data
 
 import com.norhan.data.executor.JobExecutor
 import com.norhan.data.repository.impl.HomeRepositoryImpl
@@ -7,8 +7,8 @@ import com.norhan.domain.repositories.HomeRepository
 import dagger.Binds
 import dagger.Module
 
-@Module(includes = [ApisModule::class])
-abstract class DataModule {
+@Module(includes = [ApiModule::class])
+abstract class RepositoryModule {
 
     @Binds
     abstract fun bindThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor
