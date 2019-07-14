@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ItemApi {
     @GET("/services/json/itemsfeed.php")
-    fun getNews(): Single<ItemData>
+    fun getNews(): Single<ArrayList<ItemData>>
 }

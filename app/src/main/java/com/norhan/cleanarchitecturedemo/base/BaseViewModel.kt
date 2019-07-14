@@ -2,26 +2,27 @@ package com.norhan.cleanarchitecturedemo.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.norhan.cleanarchitecturedemo.mapper.Mapper
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 
-class BaseViewModel<V, D>(private val mapper: Mapper<V, D>) : ViewModel() {
+abstract class BaseViewModel<T, M> : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    fun subscribe(single: Single<D>, data: MutableLiveData<Data<V>>) {
+    fun subscribe(single: Single<T>, data: MutableLiveData<Data<M>>) {
         compositeDisposable.add(single
             .doOnSubscribe {
                 data.value = Data(responseType = Status.LOADING)
             }
             .subscribe({ response ->
-                data.value = Data(responseType = Status.SUCCESSFUL, data = mapper.mapToViewModel(response))
+                data.value = Data(responseType = Status.SUCCESSFUL, data = getMappedResponse(response))
             }, { error ->
                 data.value = Data(responseType = Status.ERROR, error = Error(error.message))
             })
         )
     }
+
+    abstract fun getMappedResponse(data: T): M
 
     private fun clearSubscription() {
         if (compositeDisposable.isDisposed.not()) compositeDisposable.clear()

@@ -1,6 +1,6 @@
 package com.norhan.domain.entities
 
-data class ItemDomain(
+data class ItemEntity(
     val image: String? = null,
     val itemName: String? = null,
     val price: String? = null,

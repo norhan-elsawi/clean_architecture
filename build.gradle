@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
@@ -19,7 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+
     }
 }
 
@@ -38,4 +38,5 @@ ext {
     sdpVersion = "1.0.6"
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
+    viewModelVersion = "1.1.1"
 }

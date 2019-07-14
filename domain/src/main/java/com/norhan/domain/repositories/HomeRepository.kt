@@ -1,7 +1,8 @@
 package com.norhan.domain.repositories
 
-import com.norhan.domain.entities.ItemDomain
+import com.norhan.domain.entities.ItemEntity
+import io.reactivex.Single
 
 interface HomeRepository {
-    fun getItems(): ItemDomain
+    fun getItems(): Single<List<ItemEntity>>
 }
